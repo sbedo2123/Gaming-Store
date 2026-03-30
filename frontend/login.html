@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ZackStore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Notification -->
+  <div id="notification" class="notification"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      🎮 ZackStore
+    </div>
+    <div class="nav-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="cart.html" class="nav-link">Cart</a>
+      <a href="login.html" class="nav-btn" style="background-color: var(--primary-dark);">Login</a>
+    </div>
+  </nav>
+
+  <!-- Login Container -->
+  <section class="container">
+    <div class="login-container">
+      <h1 class="login-title">🎮 Login</h1>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label">Email or Username</label>
+          <input type="text" class="form-input" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="Enter your password" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+          <input type="checkbox" id="remember" style="margin-left: 0.5rem; cursor: pointer;">
+          <label for="remember" style="cursor: pointer;">Remember me</label>
+        </div>
+
+        <button type="submit" class="btn-secondary" style="width: 100%; padding: 0.75rem; cursor: pointer;">Login</button>
+      </form>
+
+      <!-- Links -->
+      <div class="login-link">
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+
+      <!-- Sign Up Link -->
+      <p style="text-align: center; margin-bottom: 1rem;">Don't have an account?</p>
+      <button type="button" class="btn-primary" style="width: 100%; padding: 0.75rem; text-decoration: none;" onclick="location.href='signup.html'">Create New Account</button>
+
+      <!-- Social Login -->
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <p style="color: #94a3b8; margin-bottom: 1rem;">Or login via</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <button type="button" style="background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 0.5rem; color: white; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+            Google
+          </button>
+          <button type="button" style="background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 0.5rem; color: white; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-color)'">
+            Discord
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: auto;">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>🎮 ZackStore</h3>
+        <p>The largest store for selling premium gaming accounts with full guarantee on all accounts.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Available Games</h3>
+        <a href="#">Valorant</a>
+        <a href="#">Fortnite</a>
+        <a href="#">League of Legends</a>
+        <a href="#">CSGO</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: support@zackstore.com</p>
+        <p>Phone: +1 800 123 4567</p>
+        <p>Chat: Available 24/7</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZackStore All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      showNotif('You have logged in successfully!');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    });
+
+    function showNotif(msg) {
+      const notif = document.getElementById('notification');
+      notif.innerText = msg;
+      notif.classList.add('show');
+      setTimeout(() => notif.classList.remove('show'), 3000);
+    }
+  </script>
+</body>
+</html>
